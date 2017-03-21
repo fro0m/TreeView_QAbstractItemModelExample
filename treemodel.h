@@ -1,6 +1,11 @@
 #ifndef TREEMODEL_H
 #define TREEMODEL_H
-
+/*
+ *
+ *  Example of QAbstractItemModel with TreeView component
+ *  author Konstantin Frumkin
+ *
+ * */
 #include <QAbstractItemModel>
 #include <QVariant>
 
