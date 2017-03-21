@@ -21,7 +21,6 @@ public:
     }
     int row() const {
         const Item * parent = getParent();
-        //Q_ASSERT(!parent);
         int row = parent->children.indexOf(const_cast<Item *>(this));
         return row;
     }
@@ -36,6 +35,8 @@ public:
         return text;
     }
 
+
+    QList<Item *> &getChildren();
 
 private:
     QString text {"index is "};
@@ -55,6 +56,8 @@ public:
     int rowCount(const QModelIndex &parent) const;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
     QModelIndex parent(const QModelIndex &index) const;
+    /// item to be moved after target item
+    Q_INVOKABLE void moveRow(const QModelIndex& sourceIndex, const QModelIndex& targetIndex);
 private:
     Item rootItem;
 };
